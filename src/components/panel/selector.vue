@@ -11,45 +11,38 @@ const count = ref(0)
 </script>
 
 <template>
-  <div class="out">
-    <img class="static_picture1" src="/src/assets/panel_img/static/chunk0.png">
-    <img class="static_picture2" src="/src/assets/panel_img/static/comp0.png">
+  <div class="panel_frame">
+    <div class="panel">
+      <img class="static1" src="/src/assets/panel_img/static/chunk0.png">
+      <img class="static2" src="/src/assets/panel_img/static/comp0.png">
+    </div>
+    
   </div>
   
 </template>
 
 <style>
-  .out {
+  .panel_frame {
     display: flex;
     align-items: center;
     justify-content: flex-start; /* 靠左对齐 */
     height: 100%; /* 确保容器有足够的高度 */
-    
-    
-    
   }
-  .picture {
-    /* position:absolute; */
 
-    height: 70%;
-    width: auto;
-  }
-  .static_picture1 {
+  .panel {
+    /* position:absolute; */
     position:absolute;
     display: flex;
 
     height: 70%;
     width: auto;
-
+  }
+  .panel > .static1 {
+    all:inherit;
     z-index: 0;
   }      
-  .static_picture2 {
-    position:absolute;
-    display: flex;
-
-    height: 70%;
-    width: auto;
-
+  .panel > .static2 {
+    all:inherit;
     z-index: 1;
   }
 </style>
