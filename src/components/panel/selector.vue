@@ -12,13 +12,11 @@ defineProps({
 })
 
 
-let isHovering=ref(false);
+let isHovering1=ref(false);
+let isHovering2=ref(false);
+let isHovering3=ref(false);
+let isHovering4=ref(false);
 
-
-function mousein() {
-  isHovering = true
-  console.log("mousein")
-};
 </script>
 
 <template>
@@ -26,15 +24,30 @@ function mousein() {
     <div class="panel">
       <img class="static" :src="stchunk" />
 
-      <img :class="{ 'hover-effect': isHovering }" class="anchunk" :src="animchunk1" />
+      <img :class="{ 'hover1': isHovering1 }" class="anchunk" :src="animchunk1" />
+      <img :class="{ 'hover2': isHovering2 }" class="anchunk" :src="animchunk2" />
+      <img :class="{ 'hover3': isHovering3 }" class="anchunk" :src="animchunk3" />
+      <img :class="{ 'hover4': isHovering4 }" class="anchunk" :src="animchunk4" />
 
       
     </div>
 
 
     <div    class="det1"
-            @mouseover="isHovering = true"
-            @mouseleave="isHovering = false">
+            @mouseover="isHovering1 = true"
+            @mouseleave="isHovering1 = false">
+    </div>
+    <div    class="det2"
+            @mouseover="isHovering2 = true"
+            @mouseleave="isHovering2 = false">
+    </div>
+    <div    class="det3"
+            @mouseover="isHovering3 = true"
+            @mouseleave="isHovering3 = false">
+    </div>
+    <div    class="det4"
+            @mouseover="isHovering4 = true"
+            @mouseleave="isHovering4 = false">
     </div>
   </div>
   
@@ -47,12 +60,14 @@ function mousein() {
 <style>
   .panel_frame {
     align-items: center;
-    position:absolute;
+    position: relative;
 
     /* justify-content: flex-start; 靠左对齐 */
     height: 100%; /* 确保容器有足够的高度 */
     width: 100%;
     z-index: 0;
+
+    overflow: hidden;
   }
 
   .panel {
@@ -64,7 +79,7 @@ function mousein() {
     left: 50%;
 
     height: 80%;
-    width: 80%;
+    width: 0%;
     margin: 0;
 
     z-index: 0;
@@ -82,25 +97,24 @@ function mousein() {
      position: absolute;
      top: 0%;
      left: 0%;
-
-      z-index: 4;
       
-      transition: all 0.8s ease;
+      transition: all 0.8s cubic-bezier(0.1, 0.6, 0.7, 2);
   }
-  .panel > .anim1{
-    position: absolute;
-    height: 100%;
-    width:  100%;
-
-    z-index: 6;
-    
-    
+  .hover1 {
+    left: -30px;
+    top: -30px; 
   }
-  .hover-effect {
+  .hover2 {
     left: 30px;
-    top: -60px; 
-
-    
+    top: -30px; 
+  }
+  .hover3 {
+    left: 30px;
+    top: 30px; 
+  }
+  .hover4 {
+    left: -30px;
+    top: 30px; 
   }
 
 
@@ -111,8 +125,49 @@ function mousein() {
 
     left: 50%;
 
+    height: 35%;
+    width: 25%;
+    margin: 0;
+
+    z-index: 0;
+  }
+  .panel_frame > .det2 {
+    position:absolute;
+    /* position: relative; */
+    display: flex;
+
+    left: 80%;
+
     height: 40%;
-    width: 30%;
+    width: 25%;
+    margin: 0;
+
+    z-index: 0;
+  }
+  .panel_frame > .det3 {
+    position:absolute;
+    /* position: relative; */
+    display: flex;
+
+    top: 45%;
+    left: 80%;
+
+    height: 45%;
+    width: 25%;
+    margin: 0;
+
+    z-index: 0;
+  }
+  .panel_frame > .det4 {
+    position:absolute;
+    /* position: relative; */
+    display: flex;
+
+    top: 40%;
+    left: 50%;
+
+    height: 45%;
+    width: 25%;
     margin: 0;
 
     z-index: 0;
