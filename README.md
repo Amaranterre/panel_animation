@@ -1,12 +1,16 @@
 ## 使用
 
-In VScode terminal, run:
-
+在vscode终端上执行：
 ```
-npm run build
+npm install
 ```
+和
+```
+npm run dev
+```
+来搭建本地环境
 
-to open
+然后在浏览器访问"http://localhost:5173/"查看页面
 
 ## 进度
 
