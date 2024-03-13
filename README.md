@@ -10,7 +10,8 @@ npm run dev
 ```
 来搭建本地环境
 
-然后在浏览器访问"http://localhost:5173/"查看页面
+然后在浏览器访问"http://localhost:5173/"
+来查看页面
 
 ## 进度
 
